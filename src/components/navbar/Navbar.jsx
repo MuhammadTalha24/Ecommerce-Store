@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='bg-primary py-1 d-flex justify-content-center text-white'>
       <span className='fw-regular fs-6 mb-0 py-2'>Sign up and Get 20% off on your first order</span>
     </div>
-    <nav className="navbar navbar-expand-lg border-primary border-5 py-3 border-bottom navbar-expand-lg bg-body-white">
+    <nav className="navbar sticky-top border-bottom border-5 border-primary navbar-expand-lg py-3 bg-white navbar-expand-lg bg-body-white">
   <div className="container">
     <a className="navbar-brand fs-4 fw-bolder" href="#">ItsWears</a>
    <button className="navbar-toggler order-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
