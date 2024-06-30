@@ -1,14 +1,12 @@
 import React from 'react'
 import Layout from '../../components/layout/Layout'
 
-
-const Home = () => {
-   
+const Prodcuts = () => {
   return (
     <Layout>
-      home
+        Products
     </Layout>
   )
 }
 
-export default Home
+export default Prodcuts

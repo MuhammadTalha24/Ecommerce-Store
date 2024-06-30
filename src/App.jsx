@@ -6,6 +6,7 @@ import Order from './pages/order/Order'
 import Cart from './pages/cart/Cart'
 import Nopage from './pages/nopage/NoPage'
 import { Mystate } from './context/data/Mystate'
+import Prodcuts from './pages/allproducts/Prodcuts'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/order' element={<Order/>} />
         <Route path='/cart' element={<Cart/>} />
+        <Route path='/products' element={<Prodcuts/>} />
         <Route path='/*' element={<Nopage/>} />
       </Routes>
     </Router>

@@ -1,4 +1,12 @@
-$primary: orange;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$primary: #3E1700;
+$font-family-sans-serif: "Poppins", sans-serif;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+
+  
+.fw-medium{
+    font-weight: 500;
+}
