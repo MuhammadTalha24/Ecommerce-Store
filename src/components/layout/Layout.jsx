@@ -1,6 +1,8 @@
 import React from 'react'
 import Footer from '../footer/Footer'
 import Navbar from '../navbar/Navbar'
+import StaticCardSection from '../StaticCardSection'
+import StaticCardFooter from '../StaticCardFooter'
 const Layout = ({children}) => {
   return (
     <>
@@ -8,6 +10,7 @@ const Layout = ({children}) => {
     <main>
         {children}
     </main>
+    <StaticCardFooter />
     <Footer/>
     </>
   )
