@@ -2,10 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+  const user = JSON.parse(localStorage.getItem('user'))
+ const logout = () =>{
+    localStorage.clear('user')
+    window.location.href = '/login'
+ }
   return (
     <>
-    <div className='bg-primary py-1 d-flex justify-content-center text-white'>
-      <span className='fw-regular me-md-5 me-0 fs-6 mb-0 py-2'>Sign up and Get 20% off on your first order</span>
+    <div className='bg-primary py-1 d-flex justify-content-end '>
+     <a className='fw-regular me-5 fs-6 mb-0 text-white py-2 text-decoration-none' href="tel:03008032235">Helpline: 03008032235</a>
     </div>
     <nav className="navbar sticky-top border-bottom border-5 border-primary navbar-expand-lg py-3 bg-white navbar-expand-lg bg-body-white">
   <div className="container">
@@ -21,17 +26,14 @@ const Navbar = () => {
         <li className="nav-item">
         <Link className='nav-link fw-medium text-decoration-none' to={'/products'}>All Products</Link>
         </li>
-        <li className="nav-item">
+        {user?.user?.email === 'talha@gmail.com' || user?.user?.email === 'waqas@gmail.com' ?   '' : <li className="nav-item">
         <Link className='nav-link fw-medium text-decoration-none' to={'/order'}>Orders</Link>
-        </li>
-        <li className="nav-item">
+        </li>  }
+        {user?.user?.email === 'talha@gmail.com' || user?.user?.email === 'waqas@gmail.com' ?  <li className="nav-item">
         <Link className='nav-link fw-medium text-decoration-none' to={'/dashboard'}>Admin</Link>
-        </li>
-       
+        </li> : '' }
 
-      </ul>
-      <ul className='list-unstyled d-flex flex-column align-items-start flex-md-row align-items-md-center mb-0'>
-        <li className='nav-item'>
+       {user?.user?.email === 'talha@gmail.com' || user?.user?.email === 'waqas@gmail.com' ? '' :  <li className='nav-item'>
           <Link className='nav-link ' to={'/cart'}>
           <span className='d-flex align-items-center'>
           <span className='me-2 fw-medium'>Cart</span>
@@ -42,9 +44,21 @@ const Navbar = () => {
          </i>
           </span>
           </Link>
-        </li>
-        <li className="nav-item ms-md-4 ms-0">
-        <a className='btn btn-dark' href='#'>Log Out</a>
+        </li> }
+      
+       
+
+      </ul>
+      <ul className='list-unstyled d-flex flex-column align-items-start gap-md-2 flex-md-row align-items-md-center mb-0'>
+        
+        {user ? <li className="nav-item">
+        <a onClick={logout} className='btn btn-dark' href='#'><i class="bi bi-box-arrow-left me-2"></i>Log Out</a>
+        </li> :<li className="nav-item">
+        <Link to={'/login'} className='btn btn-dark' href='#'><i class="bi bi-box-arrow-in-right me-2"></i>Login</Link>
+        </li> }
+
+        <li className="nav-item">
+        <Link to={'/signup'} className='btn btn-primary'>Register</Link>
         </li>
       </ul>
     </div>
