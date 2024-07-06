@@ -71,6 +71,9 @@ const Signup = () => {
                          <span >Do you already have an account?<Link  className='text-decoration-none ms-1 text-white fw-bold' to={'/login'}>Login</Link></span>
                     </div>
                 </div>
+                <div className="d-flex justify-content-center mt-4">
+               <Link  to={'/'}><button className='btn btn-outline-dark'>Back to Home</button></Link>
+               </div>
             </div>
         </div>
     </div>

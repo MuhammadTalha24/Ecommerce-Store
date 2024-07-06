@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router , Routes , Route, Navigate} from "react-router-dom"
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router , Routes , Route, Navigate, useNavigate} from "react-router-dom"
 import Home from './pages/home/Home'
 import Dashboard from './pages/admin/dashboard/Dashboard'
 import Order from './pages/order/Order'
@@ -13,7 +13,7 @@ import ProductInfo from './pages/productinfo/ProductInfo'
 import UpdateProduct from './pages/admin/pages/UpdateProduct'
 import AddProduct from './pages/admin/pages/AddProduct'
 import 'react-toastify/dist/ReactToastify.css'
-import { ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 
 const App = () => {
   return (
@@ -59,10 +59,13 @@ export default App
 
 export const ProtectedRoute = ({children}) => {
   const user = localStorage.getItem('user')
+  const navigate = useNavigate()
   if(user){
     return children
   }else{
-    <Navigate  to={'/login'}/>
+    useEffect(()=>{
+      navigate('/login')
+    },[])
   }
 }
 export const ProtectedRouteForAdmin = ({children}) => {

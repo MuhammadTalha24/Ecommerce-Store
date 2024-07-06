@@ -42,6 +42,7 @@ const Login = () => {
         {loading && <Loader/>}
         {!loading && 
             <div className="container">
+
             <h1 className='text-center mb-4 text-black'>InfinityWears</h1>
         <div className="row justify-content-center">
             <div className="col-md-4">
@@ -54,6 +55,9 @@ const Login = () => {
                          <span >Dont have an account?<Link className='text-decoration-none ms-1 text-white fw-bold' to={'/signup'}>Signup</Link></span>
                     </div>
                 </div>
+               <div className="d-flex justify-content-center mt-4">
+               <Link  to={'/'}><button className='btn btn-outline-dark'>Back to Home</button></Link>
+               </div>
             </div>
         </div>
     </div>
