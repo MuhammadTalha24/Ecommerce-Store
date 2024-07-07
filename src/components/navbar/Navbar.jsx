@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
@@ -7,6 +8,7 @@ const Navbar = () => {
     localStorage.clear('user')
     window.location.href = '/login'
  }
+ const cartitItems = useSelector((state)=>state.cart)
   return (
     <>
     <div className='bg-primary py-1 d-flex justify-content-end '>
@@ -39,7 +41,7 @@ const Navbar = () => {
           <span className='me-2 fw-medium'>Cart</span>
           <i className="fs-3 bi bi-cart3 position-relative">
          <span style={{fontSize:'12px'}} className="position-absolute mt-2 top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          2
+          {cartitItems.length}
         </span>
          </i>
           </span>
